@@ -129,10 +129,7 @@ class SnakeGame:
         # Swich Case is supported in Python 3.10+
 
     def _generate_food(self):
-        if len(self.non_snake) > 0:
-            food = random.sample(self.non_snake, 1)[0]
-        else: # If the snake occupies the entire board, no need to generate new food and just default to (0, 0).
-            food = (0, 0)
+        food = random.sample(list(self.non_snake), 1)[0]
         return food
     
     def draw_score(self):
